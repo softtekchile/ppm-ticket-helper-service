@@ -1,5 +1,6 @@
 package com.rpa.ppmtickethelperservice.business.impl;
 
+import com.rpa.ppmtickethelperservice.core.exception.EncryptException;
 import com.rpa.ppmtickethelperservice.core.exception.TicketHelperServiceException;
 import com.rpa.ppmtickethelperservice.core.util.DecrypterUtil;
 import com.rpa.ppmtickethelperservice.entities.constant.Constants;
@@ -19,12 +20,12 @@ public class ProcessTicketDataImpl implements com.rpa.ppmtickethelperservice.bus
 
         ProcessTicketResponse response = new ProcessTicketResponse();
 
-        byte[] base64Decrypted = Base64.getDecoder().decode(request.getAuth().getEncryptedPw());
-        String decryptedPw = "";
+        String decryptedPw = null;
         try {
-            decryptedPw = DecrypterUtil.decrypt(base64Decrypted,Constants.ENCRYPTION_KEY);
+            decryptedPw = DecrypterUtil.decrypt(request.getAuth().getEncryptedPw());
         } catch (Exception e) {
             e.printStackTrace();
+            throw new EncryptException();
         }
         response.setNroSolicitud(decryptedPw);
         return response;

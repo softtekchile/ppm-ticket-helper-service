@@ -13,5 +13,6 @@ public class ErrorMessage
 
 
     public static final String UNEXPECTED_ERROR = "ERROR INESPERADO";
+    public static final String ENCRYPT_ERROR = "ERROR AL ENCRPITAR";
 
 }
