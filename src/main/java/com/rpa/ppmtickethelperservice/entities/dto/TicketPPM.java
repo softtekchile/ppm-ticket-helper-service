@@ -12,6 +12,7 @@ public class TicketPPM {
     private String assignedTo;
     private String reason;
     private String clientId;
+    private String requestorName;
     private String categoryApplication;
     private String location;
     private String detailedDescription;
@@ -96,6 +97,14 @@ public class TicketPPM {
         this.clientId = clientId;
     }
 
+    public String getRequestorName() {
+        return requestorName;
+    }
+
+    public void setRequestorName(String requestorName) {
+        this.requestorName = requestorName;
+    }
+
     public String getCategoryApplication() {
         return categoryApplication;
     }
@@ -133,6 +142,7 @@ public class TicketPPM {
                 ", assignedTo='" + assignedTo + '\'' +
                 ", reason='" + reason + '\'' +
                 ", clientId='" + clientId + '\'' +
+                ", requestorName='" + requestorName + '\'' +
                 ", categoryApplication='" + categoryApplication + '\'' +
                 ", location='" + location + '\'' +
                 ", detailedDescription='" + detailedDescription + '\'' +

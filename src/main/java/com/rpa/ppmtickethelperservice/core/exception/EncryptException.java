@@ -1,8 +1,6 @@
 package com.rpa.ppmtickethelperservice.core.exception;
 
-/**
- * Created by jespinosa on 11/07/2018.
- */
+
 public class EncryptException extends TicketHelperServiceException {
 
     public String getCode(){
